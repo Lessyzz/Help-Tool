@@ -9,8 +9,23 @@ class HelpTool():
 6) View Exif data
 7) Enum4linux (Get info about target)
 8) Hping3 (Dos - DDos)
+9) Ssh2john (Convert ssh hash to john hash)
+10) John (Crack hash)
+
+11) rlwrap (For better terminal)
+12) Python shell/bash
+13) Linpeas (Privilege escalation)
+
+14) gtfobins (Documentary for privilege escalation)
+
+15) Searchsploit (Search exploit)
+16) smbmap -H 1.2.3.4 (List share folders)
+17) smbget (Download file from smb server)
+18) arp-scan -l (List devices in network)
 
 99) Exit
+
+
 """
 
         self.portScan = """
@@ -59,6 +74,42 @@ hping3 usage: hping3 -S --flood -V 127.0.0.1
 Another dos - ddos tools: Slowloris, Hulk, HOIC, LOIC, Tor's Hammer
         """
 
+        self.ssh2john = """
+ssh2john usage: ssh2john id_rsa > hash.txt
+        """
+
+        self.john = """
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+        """
+
+        self.rlwrap = """
+rlwrap nc -lnvp 4444
+        """
+
+        self.pythonsell = """
+python -c 'import pty; pty.spawn("/bin/bash")'
+        """
+
+        self.linpeas = """
+linpeas.sh
+        """
+
+        self.searchExploit = """
+searchsploit apache 2.4.49
+        """
+
+        self.smbmap = """
+smbmap -H 1.2.3.4
+        """
+
+        self.smbget = """
+smbget -R smb://10.20.30.40/sambashare -a
+        """
+
+        self.arpscan = """
+arp-scan -l
+        """
+
         self.run()
 
     def getInput(self):
@@ -81,8 +132,25 @@ Another dos - ddos tools: Slowloris, Hulk, HOIC, LOIC, Tor's Hammer
                 print(self.enum4linux)
             case "8":
                 print(self.hping3)
-            
-            
+            case "9":
+                print(self.ssh2john)
+            case "10":
+                print(self.john)
+            case "11":
+                print(self.rlwrap)
+            case "12":
+                print(self.pythonsell)
+            case "13":
+                print(self.linpeas)
+            case "15":
+                print(self.searchExploit)
+            case "16":
+                print(self.smbmap)
+            case "17":
+                print(self.smbget)
+            case "18":
+                print(self.arpscan)
+                
             case "99":  
                 exit()
 
